@@ -25,11 +25,10 @@ class Imc {
   double get altura => _altura;
 
   double calcularIMC() {
-    if (_altura > 0 && _peso > 0 && (_altura / 100) > 1.000) {
+    if (_altura > 0 && _peso > 0) {
       return _peso / ((_altura / 100) * (_altura / 100));
     } else {
       return 0.0;
     }
   }
-  
 }

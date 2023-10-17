@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                               return Dismissible(
                                 onDismissed:
                                     (DismissDirection dismissDirection) {
-                                  imcReposistory.removerrIMC(imc.id);
+                                  imcReposistory.removerIMC(imc.id);
                                   obterIMC();
                                 },
                                 key: Key(imc.id),
@@ -183,28 +183,23 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Expanded(
-                    child: Column(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          mediaIMC <= 0.00 ? '' : 'Média IMC:',
-                          style: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          mediaIMC <= 0.00 ? '' : mediaIMC.toStringAsFixed(2),
-                          style: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                      ],
+                    Text(
+                      mediaIMC <= 0.00 ? '' : 'Média IMC:',
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                    if (mediaIMC > 0.00) Expanded(child: notificacao(mediaIMC))
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      mediaIMC <= 0.00 ? '' : mediaIMC.toStringAsFixed(2),
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
                   ],
                 )),
                 const Card(

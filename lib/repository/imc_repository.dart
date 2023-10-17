@@ -7,7 +7,7 @@ class ImcRepository {
     _imc.add(imc);
   }
 
-  void removerrIMC(String id) {
+  void removerIMC(String id) {
     _imc.remove(_imc.where((imc) => imc.id == id).first);
   }
 
